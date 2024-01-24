@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Pan",
+    "description": "Pan integral",
+    "price": 3,
+    "thumbnail": "pan_thumbnail.jpg",
+    "stock": 120,
+    "code": "P001",
+    "id": 1
+  },
+  {
+    "title": "Facturas",
+    "description": "Facturas de manteca",
+    "price": 1.8,
+    "thumbnail": "facturas_thumbnail.jpg",
+    "stock": 50,
+    "code": "F003",
+    "id": 3
+  },
+  {
+    "title": "Chipa",
+    "description": "Chipa con queso",
+    "price": 2,
+    "thumbnail": "Chipa_thumbnail.jpg",
+    "stock": 50,
+    "code": "C004",
+    "id": 4
+  },
+  {
+    "title": "Biscochitos",
+    "description": "Biscochitos dulces",
+    "price": 1,
+    "thumbnail": "Biscochitos_thumbnail.jpg",
+    "stock": 50,
+    "code": "B005",
+    "id": 5
+  },
+  {
+    "title": "Biscochitos",
+    "description": "Biscochitos salados",
+    "price": 1,
+    "thumbnail": "Biscochitos_thumbnail.jpg",
+    "stock": 50,
+    "code": "B005",
+    "id": 6
+  },
+  {
+    "title": "Pan",
+    "description": "Pan flautitra",
+    "price": 2.5,
+    "thumbnail": "pan_thumbnail.jpg",
+    "stock": 100,
+    "code": "P002",
+    "id": 6
+  }
+]
