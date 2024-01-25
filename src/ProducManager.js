@@ -7,7 +7,6 @@ class ProductManager {
     }
 
     addProduct(product) {
-        
         if (!product.title || !product.description || !product.price || !product.thumbnail || !product.stock || !product.code) {
             console.log('Todos los campos son obligatorios');
             return;
@@ -15,7 +14,6 @@ class ProductManager {
 
         const products = this.readProducts();
 
-        
         const productExist = products.find(p => p.code === product.code);
 
         if (productExist !== undefined) {
@@ -26,6 +24,7 @@ class ProductManager {
         product.id = products.length + 1;
         products.push(product);
         this.saveProducts(products);
+        console.log(`Producto '${product.title}' agregado correctamente.`);
     }
 
     getProducts() {
@@ -49,14 +48,14 @@ class ProductManager {
         const productIndex = products.findIndex(p => p.id === id);
 
         if (productIndex !== -1) {
-            
             delete updatedFields.id;
-
             products[productIndex] = { ...products[productIndex], ...updatedFields };
             this.saveProducts(products);
+            console.log(`Producto con ID ${id} actualizado correctamente.`);
             return true;
         }
 
+        console.log("Producto no encontrado.");
         return false;
     }
 
@@ -65,7 +64,7 @@ class ProductManager {
         const updatedProducts = products.filter(p => p.id !== id);
 
         if (products.length !== updatedProducts.length) {
-            console.log(`Producto con ID ${id} eliminado correctamente`);
+            console.log(`Producto con ID ${id} eliminado correctamente.`);
             this.saveProducts(updatedProducts);
         } else {
             console.log(`No se encontró un producto con ID ${id}`);
@@ -86,74 +85,4 @@ class ProductManager {
     }
 }
 
-const productManager = new ProductManager('productos.json');
-
-
-productManager.addProduct({
-    title: "Pan",
-    description: "Pan integral",
-    price: 2.5,
-    thumbnail: "pan_thumbnail.jpg",
-    stock: 100,
-    code: "P001"
-});
-
-productManager.addProduct({
-    title: "Pan",
-    description: "Pan flautitra",
-    price: 2.5,
-    thumbnail: "pan_thumbnail.jpg",
-    stock: 100,
-    code: "P002"
-});
-
-productManager.addProduct({
-    title: "Facturas",
-    description: "Facturas de manteca",
-    price: 1.8,
-    thumbnail: "facturas_thumbnail.jpg",
-    stock: 50,
-    code: "F003"
-});
-
-productManager.addProduct({
-    title: "Chipa",
-    description: "Chipa con queso",
-    price: 2,
-    thumbnail: "Chipa_thumbnail.jpg",
-    stock: 50,
-    code: "C004"
-});
-
-productManager.addProduct({
-    title: "Biscochitos",
-    description: "Biscochitos dulces",
-    price: 1,
-    thumbnail: "Biscochitos_thumbnail.jpg",
-    stock: 50,
-    code: "B005"
-});
-
-productManager.addProduct({
-    title: "Biscochitos",
-    description: "Biscochitos salados",
-    price: 1,
-    thumbnail: "Biscochitos_thumbnail.jpg",
-    stock: 50,
-    code: "B005"
-});
-
-
-console.log(productManager.getProducts());
-
-
-const productById = productManager.getProductById(1);
-console.log("Producto con ID 1:", productById);
-
-
-productManager.updateProduct(1, { price: 3.0, stock: 120 });
-console.log("Producto actualizado:", productManager.getProductById(1));
-
-
-productManager.deleteProduct(2);
-console.log("Productos después de eliminar el ID 2:", productManager.getProducts());
+module.exports = ProductManager;
