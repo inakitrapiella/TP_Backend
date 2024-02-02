@@ -1,39 +1,53 @@
-
 const fs = require('fs');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 class ProductManager {
     constructor(filePath) {
-        this.path = filePath;
+        this.path = path.join(__dirname, filePath);
     }
 
     addProduct(product) {
-        if (!product.title || !product.description || !product.price || !product.thumbnail || !product.stock || !product.code) {
-            console.log('Todos los campos son obligatorios');
+        const { title, description, code, price, stock, category, thumbnails } = product;
+
+        if (!title || !description || !code || !price || !stock || !category) {
+            console.log('Todos los campos son obligatorios, excepto thumbnails');
             return;
         }
 
         const products = this.readProducts();
 
-        const productExist = products.find(p => p.code === product.code);
+        const productExist = products.find(p => p.code === code);
 
         if (productExist !== undefined) {
             console.log("El producto ya existe con ese código");
             return;
         }
 
-        product.id = products.length + 1;
-        products.push(product);
+        const newProduct = {
+            id: uuidv4(), 
+            title,
+            description,
+            code,
+            price,
+            status: true, 
+            stock,
+            category,
+            thumbnails: thumbnails || [] 
+        };
+
+        products.push(newProduct);
         this.saveProducts(products);
-        console.log(`Producto '${product.title}' agregado correctamente.`);
+        console.log(`Producto '${title}' agregado correctamente.`);
     }
 
     getProducts() {
         return this.readProducts();
     }
 
-    getProductById(id) {
+    getProductById(productId) {
         const products = this.readProducts();
-        const product = products.find(p => p.id === id);
+        const product = products.find(p => p.id === productId);
 
         if (product !== undefined) {
             return product;
@@ -43,15 +57,15 @@ class ProductManager {
         }
     }
 
-    updateProduct(id, updatedFields) {
+    updateProduct(productId, updatedFields) {
         const products = this.readProducts();
-        const productIndex = products.findIndex(p => p.id === id);
+        const productIndex = products.findIndex(p => p.id === productId);
 
         if (productIndex !== -1) {
             delete updatedFields.id;
             products[productIndex] = { ...products[productIndex], ...updatedFields };
             this.saveProducts(products);
-            console.log(`Producto con ID ${id} actualizado correctamente.`);
+            console.log(`Producto con ID ${productId} actualizado correctamente.`);
             return true;
         }
 
@@ -59,15 +73,15 @@ class ProductManager {
         return false;
     }
 
-    deleteProduct(id) {
+    deleteProduct(productId) {
         const products = this.readProducts();
-        const updatedProducts = products.filter(p => p.id !== id);
+        const updatedProducts = products.filter(p => p.id !== productId);
 
         if (products.length !== updatedProducts.length) {
-            console.log(`Producto con ID ${id} eliminado correctamente.`);
+            console.log(`Producto con ID ${productId} eliminado correctamente.`);
             this.saveProducts(updatedProducts);
         } else {
-            console.log(`No se encontró un producto con ID ${id}`);
+            console.log(`No se encontró un producto con ID ${productId}`);
         }
     }
 
@@ -86,3 +100,4 @@ class ProductManager {
 }
 
 module.exports = ProductManager;
+
