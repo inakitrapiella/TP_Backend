@@ -1,0 +1,21 @@
+{{!< layouts/main}}
+
+<div class="container mt-4">
+    <h2>Productos en Tiempo Real</h2>
+    <div class="row">
+        {{#each products}}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{thumbnail}}" class="card-img-top" alt="{{title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">Precio: ${{price}}</p>
+                    <p class="card-text">Stock disponible: {{stock}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+

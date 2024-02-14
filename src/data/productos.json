@@ -3,7 +3,7 @@
     "title": "Pan",
     "description": "Pan integral",
     "price": 3,
-    "thumbnail": "pan_thumbnail.jpg",
+    "thumbnail": "/images/productos/pan.jpg",
     "stock": 120,
     "code": "P001",
     "id": 1
@@ -12,45 +12,45 @@
     "title": "Facturas",
     "description": "Facturas de manteca",
     "price": 1.8,
-    "thumbnail": "facturas_thumbnail.jpg",
+    "thumbnail": "/images/productos/facturas.jpg",
     "stock": 50,
     "code": "F003",
-    "id": 3
+    "id": 2
   },
   {
     "title": "Chipa",
     "description": "Chipa con queso",
     "price": 2,
-    "thumbnail": "Chipa_thumbnail.jpg",
+    "thumbnail": "/images/productos/chipa.jpg",
     "stock": 50,
     "code": "C004",
-    "id": 4
+    "id": 3
   },
   {
     "title": "Biscochitos dulces",
     "description": "Biscochitos dulces",
     "price": 1,
-    "thumbnail": "Biscochitos_thumbnail.jpg",
+    "thumbnail": "/images/productos/bizcochitosdulces.jpg",
     "stock": 50,
     "code": "B005",
-    "id": 5
+    "id": 4
   },
   {
     "title": "Biscochitos salados",
     "description": "Biscochitos salados",
     "price": 1,
-    "thumbnail": "Biscochitos_thumbnail.jpg",
+    "thumbnail": "/images/productos/bizcochitossalados.jpg",
     "stock": 50,
     "code": "B006",
-    "id": 6
+    "id": 5
   },
   {
     "title": "Pan flauta",
     "description": "Pan flauta",
     "price": 2.5,
-    "thumbnail": "pan_thumbnail.jpg",
+    "thumbnail": "/images/productos/panflauta.webp",
     "stock": 100,
     "code": "P002",
-    "id": 7 
+    "id": 6
   }
 ]
