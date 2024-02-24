@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 class CartManager {
     constructor(filePath) {
-        this.path = filePath;
+        this.path = path.resolve(__dirname, '..', 'data', filePath); 
         this.readFromFile();
     }
 
@@ -59,10 +59,8 @@ class CartManager {
             const existingProductIndex = cart.products.findIndex(product => product.id === productId);
 
             if (existingProductIndex !== -1) {
-                
                 cart.products[existingProductIndex].quantity += quantity;
             } else {
-                
                 cart.products.push({
                     id: productId,
                     quantity

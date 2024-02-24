@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 class ProductManager {
     constructor(filePath) {
-        this.path = path.join(__dirname, filePath);
+        this.path = path.resolve(__dirname, '..', 'data', filePath); 
     }
 
     addProduct(product) {

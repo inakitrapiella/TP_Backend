@@ -3,7 +3,7 @@
     "title": "Pan",
     "description": "Pan integral",
     "price": 3,
-    "thumbnail": "/images/productos/pan.jpg",
+    "thumbnail": "images/productos/pan.jpg",
     "stock": 120,
     "code": "P001",
     "id": 1
@@ -12,7 +12,7 @@
     "title": "Facturas",
     "description": "Facturas de manteca",
     "price": 1.8,
-    "thumbnail": "/images/productos/facturas.jpg",
+    "thumbnail": "images/productos/facturas.jpg",
     "stock": 50,
     "code": "F003",
     "id": 2
@@ -21,7 +21,7 @@
     "title": "Chipa",
     "description": "Chipa con queso",
     "price": 2,
-    "thumbnail": "/images/productos/chipa.jpg",
+    "thumbnail": "images/productos/chipa.jpg",
     "stock": 50,
     "code": "C004",
     "id": 3
@@ -30,7 +30,7 @@
     "title": "Biscochitos dulces",
     "description": "Biscochitos dulces",
     "price": 1,
-    "thumbnail": "/images/productos/bizcochitosdulces.jpg",
+    "thumbnail": "images/productos/bizcochitosdulces.jpg",
     "stock": 50,
     "code": "B005",
     "id": 4
@@ -39,7 +39,7 @@
     "title": "Biscochitos salados",
     "description": "Biscochitos salados",
     "price": 1,
-    "thumbnail": "/images/productos/bizcochitossalados.jpg",
+    "thumbnail": "images/productos/bizcochitossalados.jpg",
     "stock": 50,
     "code": "B006",
     "id": 5
@@ -48,7 +48,7 @@
     "title": "Pan flauta",
     "description": "Pan flauta",
     "price": 2.5,
-    "thumbnail": "/images/productos/panflauta.webp",
+    "thumbnail": "images/productos/panflauta.webp",
     "stock": 100,
     "code": "P002",
     "id": 6
